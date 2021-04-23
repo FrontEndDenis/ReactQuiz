@@ -9,8 +9,9 @@ class FooterLeftSideBar extends Component {
 				<ProgressBar
 					startQuiz={this.props.startQuiz}
 					lengthQuiz={this.props.lengthQuiz}
-					activeQuestion={this.props.activeQuestion}
 					onCurrentQuestion={this.props.onCurrentQuestion}
+					activeQuestion={this.props.activeQuestion}
+					checkedQuestion={this.props.checkedQuestion}
 				/>
 			</div>
 		)

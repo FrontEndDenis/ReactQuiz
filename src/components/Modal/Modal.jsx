@@ -21,13 +21,19 @@ class Modal extends Component {
 	handlerStartQuiz = () => {
 		this.setState({
 			startQuiz: true,
-			activeQuestion: 0
+			activeQuestion: 0,
+			checked: this.state.checkedQuestion.push(0)
 		})
 	}
 
 	currentQuestion = value => {
+		const checked = this.state.checkedQuestion
+
+		if (!checked.includes(value)) checked.push(value)
+
 		this.setState({
 			activeQuestion: value,
+			checked: checked
 		})
 	}
 
@@ -66,6 +72,7 @@ class Modal extends Component {
 						onCurrentQuestion={this.currentQuestion}
 						quiz={this.state.quiz}
 						activeQuestion={this.state.quiz[this.state.activeQuestion]}
+						checkedQuestion={this.state.checkedQuestion}
 					/>
 					{this.state.startQuiz ? <SideBar /> : null}
 				</div>

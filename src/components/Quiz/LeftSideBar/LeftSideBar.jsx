@@ -30,6 +30,7 @@ const LeftSideBar = props => {
 				startQuiz={props.startQuiz}
 				lengthQuiz={lengthQuiz}
 				onCurrentQuestion={props.onCurrentQuestion}
+				checkedQuestion={props.checkedQuestion}
 			/>
 		</div>
 	)

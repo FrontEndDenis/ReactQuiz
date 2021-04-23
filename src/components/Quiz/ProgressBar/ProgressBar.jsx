@@ -3,40 +3,25 @@ import style from './ProgressBar.module.scss'
 import ProgressItem from './ProgressItem/ProgressItem'
 
 class ProgressBar extends Component {
-	constructor(prosp) {
-		super(prosp)
-		this.state = {
-			nextItem: () => {
-				return (this.props?.activeQuestion?.id && this.props?.activeQuestion?.id !== this.props.lengthQuiz) 
-					? this.props?.activeQuestion?.id + 1 
-					: false
-			},
-			chekedItem: this.props?.activeQuestion?.id
-		}
+	nextItem = () => {
+		return (this.props?.activeQuestion?.id && this.props?.activeQuestion?.id !== this.props.lengthQuiz) 
+			? this.props?.activeQuestion?.id + 1 
+			: false
 	}
 
 	checkState = (value) => {
 		const stateItem = []
 		if (this.props.startQuiz) {
-			const activeItem = item => { 
-					if (this.props?.activeQuestion?.id === (item + 1)) {
-						stateItem.push('active')
-					}
-				},
-				nextItem = item => {
-					if (this.state.nextItem() === item + 1) {
-						stateItem.push('next')
-					}
-				}
+			if (this.props?.activeQuestion?.id === (value + 1)) stateItem.push('active')
+			
+			if (this.nextItem() === value + 1) stateItem.push('checked')
 
-			activeItem(value)
-			nextItem(value)
+			if (this.props.checkedQuestion.includes(value)) stateItem.push('checked')
 		}
 		return stateItem
 	}
 
 	render() {
-		console.log(this.state.chekedItem);
 		let lengthQuiz = this.props.lengthQuiz
 		if (!this.props.startQuiz) {
 			lengthQuiz = 1

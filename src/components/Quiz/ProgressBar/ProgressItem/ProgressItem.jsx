@@ -8,16 +8,16 @@ const ProgressItem = props => {
 			props.stateQuestion.map(item => style[item]).join(' ')
 		],
 		text = Number(props.item) + 1,
-		disabled = false
+		disabled = true
 
 	if (!props.startQuiz) {
 		text = `Всего лишь ${props.lengthQuiz} ${DeclOfNum(props.lengthQuiz, ['вопрос', 'вопроса', 'вопросов'])}`
 		styles.push(style['startQuiz'])
-		disabled = true
 	}
 
 	if (typeof text === 'number') {
 		if (text <=9) text = `0${text}`
+		disabled = false
 	}
 
 	return (

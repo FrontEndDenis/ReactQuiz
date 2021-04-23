@@ -12,6 +12,7 @@ class Content extends Component {
 					onCurrentQuestion={this.props.onCurrentQuestion}
 					quiz={this.props.quiz}
 					activeQuestion={this.props.activeQuestion}
+					checkedQuestion={this.props.checkedQuestion}
 				/>
 			</div>
 		)
