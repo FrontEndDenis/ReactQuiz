@@ -1,0 +1,16 @@
+.leftSideBar {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 300px;
+	height: 590px;
+	margin-right: 10px;
+	padding: 28px 20px 36px;
+	background: #f5f4f0;
+	border-radius: 15px;
+	&__text {
+		color: #959ba4;
+		font-size: 14px;
+		line-height: 125%;
+	}
+}

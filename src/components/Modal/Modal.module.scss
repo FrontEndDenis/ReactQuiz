@@ -1,0 +1,22 @@
+.modal {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	padding: 0px 15px;
+	z-index: 100;
+}
+
+.modalWrapper {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	max-width: 1110px;
+	width: 100%;
+	margin: 20px auto;
+	z-index: 102;
+}

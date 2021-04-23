@@ -1,0 +1,61 @@
+*, *::before, *::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+button {
+	padding: 0;
+	border: none;
+	font: inherit;
+	color: inherit;
+	background-color: transparent;
+	cursor: pointer;
+	&:active, &:focus {outline: none}
+	&::-moz-focus-inner {border: 0}
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0px;
+}
+
+// Colors
+// All
+$white: #fff;
+$black: #000;
+$red: #eb5757;
+
+$twoColor: true;
+$accent-main: true;
+$accent-main2: true;
+$accent-main3: true;
+
+@if $twoColor {
+	$accent-main-one: #e2ae53;
+	$accent-main-two: #e1874d;
+	$accent-main: linear-gradient(90deg, $accent-main-one 0%, $accent-main-two 100%);
+	$accent-main2: linear-gradient(90deg, $accent-main-two 0%, $accent-main-one 100%);
+} @else {
+	$accent-main: #e1874d;
+	$accent-main2: #e1874d;
+	$accent-main3: #e1874d;
+}
+
+
+// Style
+
+// Colors text
+$txt-dark-gray: #4f4f4f;
+$txt-lgh-gray: #959ba4;
+
+// Colors UI
+$ui-lgh-bg-gray: #f5f4f0;
+$ui-lgh-gray: #d3ceb7;
+$ui-box-shadow-accent: #e29a50;

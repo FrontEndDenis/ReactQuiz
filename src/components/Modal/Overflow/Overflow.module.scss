@@ -1,0 +1,10 @@
+.overflow {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background: rgba($color: #000000, $alpha: .25);
+	z-index: 101;
+	cursor: pointer;
+}

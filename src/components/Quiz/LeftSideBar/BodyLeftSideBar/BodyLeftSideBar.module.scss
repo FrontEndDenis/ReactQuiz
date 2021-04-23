@@ -1,0 +1,25 @@
+.BodyLeftSideBar {
+	&__number {
+		display: inline-block;
+		margin-bottom: 12px;
+		background: linear-gradient(90deg, #e2ae53 0%, #e1874d 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-transform: uppercase;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 140%;
+	}
+	&__question {
+		color: #4f4f4f;
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 125%;
+	}
+	&__text {
+		margin: 16px 0px 36px;
+		color: #959ba4;
+		font-size: 14px;
+		line-height: 140%;
+	}
+}

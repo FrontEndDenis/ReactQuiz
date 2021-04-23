@@ -1,0 +1,130 @@
+// Colors
+// All
+$white: #fff;
+$black: #000;
+$red: #eb5757;
+
+$twoColor: true;
+$accent-main: true;
+$accent-main2: true;
+$accent-main3: true;
+
+@if $twoColor {
+	$accent-main-one: #e2ae53;
+	$accent-main-two: #e1874d;
+	$accent-main: linear-gradient(90deg, $accent-main-one 0%, $accent-main-two 100%);
+	$accent-main2: linear-gradient(90deg, $accent-main-two 0%, $accent-main-one 100%);
+} @else {
+	$accent-main: #e1874d;
+	$accent-main2: #e1874d;
+	$accent-main3: #e1874d;
+}
+
+
+// Style
+
+// Colors text
+$txt-dark-gray: #4f4f4f;
+$txt-lgh-gray: #959ba4;
+
+// Colors UI
+$ui-lgh-bg-gray: #f5f4f0;
+$ui-lgh-gray: #d3ceb7;
+$ui-box-shadow-accent: #e29a50;
+
+.btn {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 40px;
+	padding: 10px;
+	background: $ui-lgh-bg-gray;
+	color: $txt-lgh-gray;
+	border-radius: 5px;
+	box-shadow: 0px 4px 10px rgba($color: #000, $alpha: .05);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	z-index: 1;
+	overflow: hidden;
+	cursor: pointer;
+	svg {
+		stroke: $red;
+	}
+	&--accent {
+		background: $accent-main;
+		color: $white;
+		box-shadow: 0px 5px 15px rgba($color: $ui-box-shadow-accent, $alpha: .45);
+		svg {
+			stroke: $white;
+		}
+		&:hover {
+			&::before {
+				opacity: 1;
+			}
+		}
+		&:active {
+			&::after, &::before {
+				opacity: 1;
+			}
+		}
+	}
+	&--wdh258 {max-width: 258px}
+	&--wdh140 {max-width: 140px}
+	&--wdh40 {max-width: 40px}
+	&--h50 {
+		height: 50px;
+		line-height: 22px;
+	}
+	&--br10 {
+		border-radius: 10px;
+	}
+	&--svg {
+		svg {margin-left: 12px;}
+	}
+	&--prev {
+		flex-direction: row-reverse;
+		svg {
+			margin-right: 12px;
+			transform: rotate(-180deg);
+		}
+	}
+	&--not-text {
+		svg {margin: 0px;}
+	}
+	&:disabled {
+		box-shadow: none;
+		&::after {
+			background: rgba($color: $white, $alpha: .5);
+			opacity: 1;
+		}
+		&:hover, &:active {
+			&::before {
+				display: none;
+			}
+			&::after {
+				background: rgba($color: $white, $alpha: .5);
+			}
+		}
+	}
+	&::before, &::after {
+		content: '';
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		transition: .3s ease;
+		opacity: 0;
+	}
+	&::before {
+		background: $accent-main2;
+		z-index: -1;
+	}
+	&::after {
+		background: rgba($color: $white, $alpha: .2);
+		z-index: 2;
+	}
+}
